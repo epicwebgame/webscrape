@@ -1,0 +1,6 @@
+const fs = require('fs')
+const $ = require('cheerio')
+let html = fs.readFileSync('./listaDoctoresUnparsed.html','utf8')
+html = $.parseHTML(html)
+fs.writeFileSync('./listaDoctoresParsed.html',html)
+console.log(html)
